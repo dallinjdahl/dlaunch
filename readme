@@ -1,17 +1,23 @@
 dlaunch
 
-This script is a dmenu_run replacement using the execline language
+This script is a dmenu_run[1] replacement using the execline[2] language
 instead of sh.  It also has added support for running programs in the
-terminal by simply appending ; to the input.
+terminal by simply appending ; to the input.  By default this terminal
+is st[3].
 
 pkg/install
 
 This script is designed to create a symlink to the dlaunch script in a
 location easily appended to the PATH variable.  By default, it creates
 the symlink at ../../bin, which assumes an organization similar to
-the following:
+the following, inspired by DJB's /package hierarchy[4]:
 
 sys: root for sysadmin files (not necessarily in root)
 sys/bin: symlinks to all binaries intended to be run by the end user.
 sys/pkg: root for packages, including source code, config, and binaries.
 sys/pkg/dlaunch: dlaunch package
+
+[1] tools.suckless.org/dmenu
+[2] skarnet.org/software/execline
+[3] st.suckless.org
+[4] cr.yp.to/slashpackage.html
