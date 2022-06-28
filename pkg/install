@@ -1,0 +1,6 @@
+#!/bin/execlineb -P
+multisubstitute {
+	define destdir ../..
+	define pkgpath ../pkg
+} 
+ln -sft ${destdir}/bin ${pkgpath}/dlaunch/dlaunch

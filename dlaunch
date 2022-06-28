@@ -1,0 +1,18 @@
+#!/usr/bin/execlineb -P
+backtick -E op {
+	pipeline { dmenu_path }
+	dmenu
+}
+
+ifte {
+	backtick -E cmd {
+		pipeline { echo $op }
+		sed -E "s/;$//"
+	}
+
+	st -t $cmd execlineb -c $cmd
+}
+{ execlineb -c $op }
+
+pipeline { echo $op }
+grep ";$"
